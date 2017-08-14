@@ -27,6 +27,10 @@
         margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
       }
     </style>
+
+    <!-- JS SCRIPT -->
+    <script type="text/javascript" src="js.js">
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -56,35 +60,37 @@
           <!-- TABLE -->
           <table class="table table-bordered">
             <tbody>
+              <form name='myForm'>
               <tr>
                 <td class="col-md-12">
-                  <input type="number" class="col-md-12 text-right form-control" />
+                  <input type="number" class="col-md-12 text-right form-control" id="numInput" onkeypress="isNumberKey(event) getNum()" />
                 </td>
               </tr>
             <tr>
-              <td class="num btn btn-default" >1</td>
-              <td class="num btn btn-default" >2</td>
-              <td class="num btn btn-default" >3</td>
-              <td class="sym btn btn-default" >+</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="1">1</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="2">2</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="3">3</td>
+              <td class="sym btn btn-default" onclick="symclick(this.id)" id="add">+</td>
             </tr>
             <tr>
-              <td class="num btn btn-default" >4</td>
-              <td class="num btn btn-default" >5</td>
-              <td class="num btn btn-default" >6</td>
-              <td class="sym btn btn-default" >-</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="4">4</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="5">5</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="6">6</td>
+              <td class="sym btn btn-default" onclick="symclick(this.id)" id="subtract">-</td>
             </tr>
             <tr>
-              <td class="num btn btn-default" >7</td>
-              <td class="num btn btn-default" >8</td>
-              <td class="num btn btn-default" >9</td>
-              <td class="sym btn btn-default" >×</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="7">7</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="8">8</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="9">9</td>
+              <td class="sym btn btn-default" onclick="symclick(this.id)" id="multiply">×</td>
             </tr>
             <tr>
-              <td style="background-color: #ff0000;" class="btn btn-default" width="25%">AC</td>
-              <td class="num btn btn-default" >0</td>
-              <td style="background-color: #32cd32;" class="btn btn-default" width="25%">=</td>
-              <td class="sym btn btn-default" >÷</td>
+              <td style="background-color: #ff0000;" class="btn btn-default" width="25%" onclick="allClear()">AC</td>
+              <td class="num btn btn-default" onclick="numClick(this.id)" id="0">0</td>
+              <td style="background-color: #32cd32;" class="btn btn-default" width="25%" onclick="equalTo()">=</td>
+              <td class="sym btn btn-default" onclick="symclick(this.id)" id="divide">÷</td>
             </tr>
+          </form>
           </tbody>
           </table>
 
